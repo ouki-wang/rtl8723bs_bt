@@ -1,0 +1,24 @@
+rtl8723bs-bt (0.1-4) unstable; urgency=medium
+
+  * use udev rules to trigger systemd bluetooth hciattach
+
+ -- Jason Abele <jason@nextthing.co>  Fri, 13 Nov 2015 15:39:03 -0800
+
+rtl8723bs-bt (0.1-3) trusty; urgency=medium
+
+  * move-bt_rtk_hciattach-back-to-bluetooth.target
+  * create link for bt_rtk_hciattach start on boot
+
+ -- Jason Abele <jason@nextthing.co>  Thu, 12 Nov 2015 18:30:37 -0800
+
+rtl8723bs-bt (0.1-2) unstable; urgency=low
+
+  * Start on boot
+
+ -- Jason Abele <jason@nextthing.co>  Thu, 12 Nov 2015 15:43:58 -0800
+
+rtl8723bs-bt (0.1-1) unstable; urgency=low
+
+  * Initial release
+
+ -- Jason Abele <jason@nextthing.co>  Thu, 12 Nov 2015 05:17:32 -0800

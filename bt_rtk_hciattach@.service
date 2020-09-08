@@ -1,0 +1,8 @@
+[Unit]
+Description=8723bs Bluetooth hciattach
+BindsTo=dev-%i
+
+[Service]
+Type=simple
+ExecStartPre=/sbin/bt_reset
+ExecStart=/sbin/rtk_hciattach -n -s 115200 %i rtk_h5

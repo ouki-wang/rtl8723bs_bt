@@ -1,0 +1,6 @@
+rtl8723bs-bt for Debian
+-----------------------
+
+Firmware and startup script package for rtl8723bs.
+
+ -- Jason Abele <jason@nextthing.co>  Thu, 12 Nov 2015 05:17:32 -0800

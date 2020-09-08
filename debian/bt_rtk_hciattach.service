@@ -1,0 +1,15 @@
+[Unit]
+Description=8723bs Bluetooth hciattach
+Documentation=man:bluetoothd(8)
+ConditionPathExists=/dev/ttyS1
+DefaultDependencies=no
+Before=shutdown.target
+Conflicts=shutdown.target
+
+[Service]
+Type=simple
+ExecStartPre=/sbin/bt_reset
+ExecStart=/sbin/rtk_hciattach -n -s 115200 /dev/ttyS1 rtk_h5
+
+[Install]
+WantedBy=bluetooth.target

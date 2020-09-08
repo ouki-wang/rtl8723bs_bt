@@ -1,0 +1,16 @@
+Source: rtl8723bs-bt
+Section: unknown
+Priority: optional
+Maintainer: Jason Abele <jason@nextthing.co>
+Build-Depends: debhelper (>= 8.0.0), dh-systemd (>= 1.5)
+Standards-Version: 3.9.4
+Homepage: <insert the upstream URL, if relevant>
+#Vcs-Git: git://git.debian.org/collab-maint/rtl8723bs-bt.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/rtl8723bs-bt.git;a=summary
+
+Package: rtl8723bs-bt
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: startup and firmware for rtl8723bs bluetooth
+ This package provides startup scripts and firmware for the rtl8723bs bluetooth
+ devices.

@@ -1,0 +1,9 @@
+rtl8723bs-bt for Debian
+-----------------------
+
+This is the source package for rtl8723bs Bluetooth firmware and startup
+support.
+
+
+ -- Jason Abele <jason@nextthing.co>  Thu, 12 Nov 2015 05:17:32 -0800
+

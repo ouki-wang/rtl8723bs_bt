@@ -1,0 +1,34 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+include /usr/share/dpkg/buildflags.mk
+
+DEB_BUILD_GNU_TYPE := $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
+DEB_HOST_GNU_TYPE  := $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+ifneq ($(DEB_HOST_GNU_TYPE),$(DEB_BUILD_GNU_TYPE))
+	CC=$(DEB_HOST_GNU_TYPE)-gcc
+endif
+
+export CC
+
+PACKAGE = rtl8723bs-bt
+
+%:
+	dh $@ --with-systemd
+
+override_dh_auto_build:
+	$(MAKE) CC=$(CC) PREFIX=$(PWD)/debian/$(PACKAGE)
+	cp tty-bt-rtk-hciattach.rules debian/$(PACKAGE).tty-bt-rtk-hciattach.udev
+
+override_dh_auto_install:
+	$(MAKE) CC=$(CC) PREFIX=$(PWD)/debian/$(PACKAGE) install
+	dh_installudev --name=tty-bt-rtk-hciattach --priority=99
+
+#override_dh_systemd_enable:
+#	dh_systemd_enable -p$(PACKAGE) bt_rtk_hciattach@.service
+
+#override_dh_systemd_start:
+#	dh_systemd_start -p$(PACKAGE) bt_rtk_hciattach@.service
